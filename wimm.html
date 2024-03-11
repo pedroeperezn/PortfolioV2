@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Pedro E. Perez - Everything Must Go!</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/game-controller-icon.png" rel="icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!--  Prism style sheet for code formatting-->
+  <link rel="stylesheet" href="./prism/prism.css">
+
+  <!-- =======================================================
+  * Template Name: DevFolio
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <div id="wimmTitle overlay-mf"style="background-color:#0078ff;">
+    <div class="text-center">
+      <h1 class="p-5 display-1">Where is My Mind?</h1>
+    </div>
+  </div>
+
+  <!--
+  <div class="hero img-fluid" style="background-color: black">
+    <div class="overlay-mf"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <div class="spacer">
+
+          </div>
+        </div>
+        <container>
+          <h1>Where is My Mind?</h1>
+          <a href="#portfolio-details" class="btn btn-lg btn-primary" role="button">About WIMM</a>
+        </container>
+      </div>
+    </div>
+  </div>
+  -->
+
+  <main id="main">
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <!-------------- PROJECT DETAILS -------------------->
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide">
+                  <img src="assets/img/WIMM/wimmScreen1.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/WIMM/wimmScreen1.5.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/WIMM/wimmScreen2.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/WIMM/wimmScreen3.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/WIMM/wimmScreen4.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/WIMM/wimmScreen5.png" alt="">
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>High Pitch</strong>: "Where Is My Mind?" is a 3D top down puzzle game in which you play as Dr. Merriweather, an amnesiac man who wakes up in a neglected asylum and needs to find his way out by solving a series of musical puzzles with nothing but the help of a Kalimba.</li>
+                <li><strong>Engine</strong>: Unity </li>
+                <li><strong>Roles</strong>: Gameplay Programmer, Audio Programmer</li>
+                <li><strong>Tools</strong>: C#, Visual Studio, FMOD Studio</li>
+                <li><strong>Dates of Development</strong>: Aug - Dec 2023</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-------------- PROJECT DEVELOPMENT ----------------->
+        <div class="project-dev my-5">
+            <h1 class="text-center my-3">Development</h1>
+            <p class="lead text-justify ptop-3"> This project was developed over a time frame of 2 months using Unity 2022.2.14f1 and FMOD. For this game, I was responsible for 
+              all gameplay programming, audio implementation, and sound design.</p>
+
+              <p class="lead pb-3">The main challenge for Where Is My Mind lies in the fact that it is a puzzle game. Puzzle games normally imply
+                the implementation of several different mechanics and a very linear constraint on in which order puzzles should be solved.
+                Also, for this game, we had the idea to implement a musical instrument that would help us open doors and solve puzzles, which
+                implied not only designing and playing the musical cue for the instrument but also the ability to enable and disable it, as well 
+                as keeping track of the notes that were played and detecting when the player played a correct tune that should unlock something
+                at that moment in the game. </p>
+              
+
+              <div class="accordion accordion-flush" id="shopping-mechanics-accordion">
+
+                <!-------------------MECHANIC: KALIMBA------------------->
+                <div class="accordion-item">
+                  <h1 class="accordion-header">
+                    <button class="accordion-button collapsed btn-lg lead" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-shopping-mechanics" aria-expanded="false" aria-controls="collapse-shopping-mechanics">
+                      Kalimba
+                    </button>
+                  </h1>
+                  <div id="collapse-shopping-mechanics" class="accordion-collapse collapse" data-bs-parent="#shopping-mechanics-accordion">
+                    <div class="accordion-body">
+
+                      <!-------------------------------BODY----------------------------------------------->
+                      <div class="mechanic-explanation my-4">
+                        <h3>Design</h3>
+                <p class="lead py-3">
+                  The Kalimba is a very important part of the concept of the game. The main idea is to be able to play an instrument in-game and use it to trigger different events or puzzles whenever playing the correct melody. 
+                  This implies that we should keep track on which are the last played notes by the player storing them somewhere and also assigning each node a value that can be equivalent to a "password". 
+                  The interactable objects can be narrowed down to doors (opening them) and the Husks, which are NPCs present in the game that move whenever the player plays the melody they are humming. 
+                </p>
+
+                <!--------------------USING KALIMBA------------------------------->
+                <div class="row">
+                  <h4>Using the Kalimba</h4>
+                  <p class="lead">
+                    In order to achieve that, I implemented a UI element that represented the kalimba, said UI element could be hidden or shown and, when shown, the control scheme would change (using the Input Action System) to impede movement and enable playing the instrument.
+                    The Kalimba consists of 8 tiles (notes). Each tile has an assigned numerical value which will help us store the played melodies as passwords for unlocking puzzles. 
+                    Every time the player plays a note, a sound cue will play corresponding to the note, 
+                    and also a numerical value will be stored in a list of integers that keep track of all the notes that have been played. 
+                    After storing the numbers, the list will be validated and pass only the last 4 notes that were played into a different array that has the purpose of being compared to all the game objects in the game that have a kalimba combination.
+                  </p>
+
+                  <!------ SCRIPT SAMPLE: KALIMBA CONTROLLER ------>
+                  <div class="code-sample row">
+                    <div class="col-1"></div>
+                    <pre class="pre-scrollable col-10"><code class="language-csharp">
+public class KalimbaController : MonoBehaviour
+{
+
+    //Input Action References for tiles
+    [SerializeField] InputActionReference PlayTile1;
+    [SerializeField] InputActionReference PlayTile2;
+    [SerializeField] InputActionReference PlayTile3;
+    [SerializeField] InputActionReference PlayTile4;
+    [SerializeField] InputActionReference PlayTile5;
+    [SerializeField] InputActionReference PlayTile6;
+    [SerializeField] InputActionReference PlayTile7;
+    [SerializeField] InputActionReference PlayTile8;
+     
+    //List implementation: All the notes played by the player will be stored on a list, so it will not be checked only when you play
+    //4 notes, but will be always checking the last 4 notes you played
+    private List<int> KalimbaPlayedNotes = new List<int>();
+
+    //Check bools
+    private bool _disableKalimba;
+
+    //The combination has four notes, so for the combo check we just pass an array the last four notes that were played
+    public int[] ComboToCheck = new int[4];
+
+    //Managers (Singletons)
+    GameManager gameManager;
+    AudioManager audioManager;
+    FMODEvents fmod;
+
+    private void OnPlayTile1(InputAction.CallbackContext obj)
+    {
+        audioManager.PlayOneShot(fmod.KalimbaTile1,transform.position);
+        KalimbaComboCreator(1);
+        FlashKey(tile1Image);
+    }
+
+    //........................One OnPlay method for each tile...............................................
+
+    //Add notes to the KalimbaPlayedNotes list and validates them
+    private void KalimbaComboCreator(int tileNo)
+    {
+        KalimbaPlayedNotes.Add(tileNo);
+        ValidateCombo();
+    }
+    
+    //If the played notes are of the length of a combo, copy it to the ComboToCheck array
+    private void ValidateCombo()
+    {
+        //Assigns the last 4 digits of the list to the Combination to be checked (array of ints)
+        if (KalimbaPlayedNotes.Count >= 4)
+        {
+            KalimbaPlayedNotes.GetRange(KalimbaPlayedNotes.Count - 4, 4).CopyTo(ComboToCheck);
+        }
+
+        //Keeps the list at 4 elements (we dont need to store every note played)
+        if (KalimbaPlayedNotes.Count > 4)
+        {
+            KalimbaPlayedNotes.RemoveAt(0);
+        }
+
+    }
+
+    //Constantly check for combinations
+    private void FixedUpdate()
+    {
+        //We now are checking for the combination on every fixed update it it has already reached the desired number of notes
+        if (KalimbaPlayedNotes.Count >= 4)
+        {
+            try
+            {
+                //Iterates through the array of objects that have combinations according to the game manager
+                foreach (GameObject comboObject in gameManager.ObjectsWithCombo)
+                {
+                    //Checks for the combination on each of the elements stored
+                    if (comboObject.GetComponent<ComboCheck>().Check(ComboToCheck))
+                    {
+                      //Clears combination in the Kalimba after having it correct
+                        for (int i = 0; i < ComboToCheck.Length; i++)
+                        {
+                            ComboToCheck[i] = 0;
+                        }
+                    }
+                }
+            }
+
+            catch
+            {
+                Debug.Log("Missing comparable combo object");
+            }
+        }
+    }
+}
+                    </code></pre>
+                  </div>
+                  <!----- END OF CODE SAMPLE ----->
+
+                  <h4>Checking combination with interactable objects</h4>
+                  <p class="lead">
+                    For objects to have a combination assigned to them I created a "ComboCheck" component, to which designers can assign the 
+                    combination in the editor and it will be in charge of comparing if the combination was triggered and flagging it as triggered when the player
+                    plays the correct melody. 
+                  </p>
+
+                  <!------ SCRIPT SAMPLE: KALIMBA CONTROLLER ------>
+                  <div class="code-sample row">
+                    <div class="col-1"></div>
+                    <pre class="pre-scrollable col-10"><code class="language-csharp">
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class ComboCheck : MonoBehaviour
+{
+    //Assign correct combo for the object
+    [SerializeField]
+    public int[] correctCombo = new int[4];
+
+    //Checks if combo has been triggered previously
+    public bool comboTriggered = false;
+    private bool canPlaySound = true;
+
+    [SerializeField] public int[] playedCombo = new int[4];
+
+
+    private AudioManager audioManager;
+    private FMODEvents fmod;
+
+    public bool Check(int[] KalimbaCombo)
+    {
+        playedCombo = KalimbaCombo;
+
+
+        if (KalimbaCombo.SequenceEqual(correctCombo))
+        {
+            //Check which method is going to be called.
+            comboTriggered = true;
+            return comboTriggered;
+        }
+
+        return comboTriggered;
+    }
+
+    private void Start()
+    {
+        audioManager = AudioManager.AMInstance;
+        fmod = FMODEvents.FMInstance;
+    }
+  }
+                    </code></pre>
+                  </div>
+                  <!----- END OF CODE SAMPLE ----->
+
+                </div>
+                <!-----END OF SHOPPING ITEMS----->
+
+                <!--------------------MOVING HUSKS WITH KALIMBA------------------------------->
+                <div class="row my-3">  
+                  <h4>Moving Husks With Kalimba</h4>
+                  <p class="lead my-3">  There are two husks in the game. Both of them follow a very similar behavior: they start immobile and, when they hear for the first time the melody
+                    they are humming, they will now move to a different position (position A). If the husk is called again, it will move to position B. The husk will from now on 
+                    always alternate between point A or point B whenever its melody is played on the Kalimba. For this behavior, I created a component called "HuskCombinationCheck"
+                    which will evaluate the "ComboCheck" component on the husk and, depending on the game objects that are set for the husk to move towards, it will evaluate if the husk
+                    should move, where should it move, and trigger whichever event that should be happening because of overlapping with the destination.  </p>
+                  
+                  <!------ SCRIPT SAMPLE: MOVING HUSKS WITH KALIMBA ------>
+                  <div class="code-sample row">
+                    <div class="col-1"></div>
+                    <pre class="pre-scrollable col-10"><code class=" language-csharp">
+public void HuskComboOk()
+{
+    //husk1 movement to point A
+    if (this.GetComponent&ltComboCheck&gt().comboTriggered && !huskHasMoved && CanMove)
+    {
+        //indicates that the husk has moved
+        PuzzleManager.Husk1HasMoved = true;
+        PuzzleManager.Husk1Sparkles.SetActive(false);
+        this.GetComponentInChildren&ltDisplayDialogueOnCollision&gt().DialogueScreen.SetActive(false);
+        //diable kalimba for player to see the action
+        if (!huskHasMoved)
+        {
+            gameManager.DisableKalimba();
+        }
+        //Dont display the melody anymore
+        this.GetComponentInChildren&ltDisplayDialogueOnCollision&gt().isShowable = false;
+        //get distance to lever and move
+        float distanceToLeaver = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(_leaver.transform.position.x, _leaver.transform.position.z));
+        float distanceToPPlate = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(_pressurePlate.transform.position.x, _pressurePlate.transform.position.z));
+        //move husk 
+        if (distanceToLeaver > 0.01 && !huskHasMoved)
+        {
+            Vector3 direction = new Vector3(_leaver.transform.position.x - transform.position.x, 0f,
+                                        _leaver.transform.position.z - transform.position.z).normalized;
+            HuskRigidBody.MovePosition(transform.position + direction * Time.deltaTime * movementSpeed);
+            Quaternion currentRotation = transform.rotation;
+            Quaternion targetRotation = Quaternion.LookRotation(direction); // converts a direction (Vector3) to a rotation (Quaternion)
+            Quaternion rotation = Quaternion.Slerp(currentRotation, targetRotation, 1f);
+            transform.rotation = rotation;
+            isInLeaver = true;
+        }
+    }
+    //husk 1 movement to point b
+    else if (this.GetComponent&ltComboCheck&gt().comboTriggered && huskHasMoved && isInLeaver && CanMove)
+    {
+        //check distance
+        float distanceToLeaver = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(_leaver.transform.position.x, _leaver.transform.position.z));
+        float distanceToPPlate = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(_pressurePlate.transform.position.x, _pressurePlate.transform.position.z));
+        //move to preassure plate (point B)
+        if (distanceToPPlate > 0.01)
+        {
+            Vector3 direction = new Vector3(_pressurePlate.transform.position.x - transform.position.x, 0f,
+                                        _pressurePlate.transform.position.z - transform.position.z).normalized;
+            HuskRigidBody.MovePosition(transform.position + direction * Time.deltaTime * movementSpeed);
+            Quaternion currentRotation = transform.rotation;
+            Quaternion targetRotation = Quaternion.LookRotation(direction); // converts a direction (Vector3) to a rotation (Quaternion)
+            Quaternion rotation = Quaternion.Slerp(currentRotation, targetRotation, 1f);
+            transform.rotation = rotation;
+        }
+    }
+    //husk2 behavior, this one doesn't return to the original position
+    else if (this.GetComponent&ltComboCheck&gt().comboTriggered && huskHasMoved && !isInLeaver && CanMove)
+    {
+        float distanceToLeaver = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(_leaver.transform.position.x, _leaver.transform.position.z));
+        float distanceToPPlate = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(_pressurePlate.transform.position.x, _pressurePlate.transform.position.z));
+        if (distanceToLeaver > 0.01)
+        {
+            Vector3 direction = new Vector3(_leaver.transform.position.x - transform.position.x, 0f,
+                                        _leaver.transform.position.z - transform.position.z).normalized;
+            HuskRigidBody.MovePosition(transform.position + direction*Time.deltaTime*movementSpeed);
+            Quaternion currentRotation = transform.rotation;
+            Quaternion targetRotation = Quaternion.LookRotation(direction); // converts a direction (Vector3) to a rotation (Quaternion)
+            Quaternion rotation = Quaternion.Slerp(currentRotation, targetRotation, 1f);
+            transform.rotation = rotation;
+        }
+    }
+}
+private void OnTriggerEnter(Collider other)
+{
+    //Point A
+    if (other.gameObject.tag == "Leaver")
+    {
+        huskHasMoved = true;
+        isInLeaver = true;
+        audioManager.PlayOneShot(fmod.barDoor,_barDoor.transform.position);
+        this.GetComponent&ltComboCheck&gt().comboTriggered = false;
+    }
+    
+    //Point B
+    else if (other.gameObject.tag == "Plate")
+    {
+        isInLeaver = false;
+        isInPressurePlate = true;
+        this.GetComponent&ltComboCheck&gt().comboTriggered = false;
+    }
+}
+                    </code></pre>
+                  </div>
+                  <!------- END OF SCRIPT SAMPLE ------->
+
+                </div>
+                <!-------END OF ITEM SPAWNER------>
+                
+                <!--------------------OPENING DOORS WITH KALIMBA---------------------------->
+                <div class="row my-3">
+                  <h4>Opening doors with the Kalimba</h4>
+                  <p class="lead my-3">For door opening, I implemented a component for each door that checks if the combination was triggered on Update. 
+                    If the combination was triggered, then 
+                    the component will mark the puzzle as solved and will open the door with an animation trigger. 
+                  </p>
+                  
+                  <!------ SCRIPT SAMPLE: OPENING DOOR WITH KALIMBA ------>
+                  <div class="code-sample row">
+                    <h5 class="my-2">Combination Check</h5>
+                    <div class="col-1"></div>
+                    <pre class="pre-scrollable col-10"><code class=" language-csharp">
+private void Update()
+{
+    if (PuzzleManager.PressurePlate1Solved && this.GetComponent<ComboCheck>().comboTriggered)
+    {
+        GetComponent<OpenDoor>().DoOpenDoor();
+        if (!_hasOpened)
+        {
+            PuzzleManager.KalimbaDoor1Solved = true;
+            PuzzleManager.KalimbaDoor1Sparkles.SetActive(false);
+            audioManager.PlayOneShot(fmod.normalDoor, transform.position);
+            _hasOpened = true;
+        }
+    }
+    else 
+    {
+        GetComponent<ComboCheck>().comboTriggered = false;
+    }
+}
+                    </code></pre>
+                  </div>
+                  <!------- END OF SCRIPT SAMPLE ------->
+
+                  <!------ SCRIPT SAMPLE: OPENING DOOR WITH KALIMBA ------>
+                  <div class="code-sample row">
+                    <h5 class="my-2">Open door</h5>
+                    <div class="col-1"></div>
+                    <pre class="pre-scrollable col-10"><code class=" language-csharp">
+public class OpenDoor : MonoBehaviour
+{
+
+    private Animator DoorAnimator;
+
+    public void DoOpenDoor()
+    {
+        DoorAnimator.SetTrigger("Open");
+    }
+
+
+    public void CloseDoor()
+    { 
+        DoorAnimator.SetTrigger("Close");
+    
+    }
+
+    private void Start()
+    {
+        DoorAnimator = GetComponent<Animator>();
+    }
+
+}
+                    </code></pre>
+                  </div>
+                  <!------- END OF SCRIPT SAMPLE ------->
+                </div>
+                <!-------END OF ITEM SPAWNER------>
+
+                </div>
+                <!-------------------------------END OF BODY---------------------------------------->
+
+                    </div>
+                  </div>
+                </div>
+                <!-------------------END OF KALIMBA----------------->
+                
+
+
+                <!--------------------MECHANIC - PUZZLE MANAGER ----------------------------------------->
+                <div class="accordion-item">
+                  <h1 class="accordion-header">
+                    <button class="accordion-button collapsed btn-lg lead" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-powerup-mechanics" aria-expanded="false" aria-controls="collapse-powerup-mechanics">
+                      Puzzle Manager
+                    </button>
+                  </h1>
+                  <div id="collapse-powerup-mechanics" class="accordion-collapse collapse" data-bs-parent="#shopping-mechanics-accordion">
+                    <div class="accordion-body">
+                      <!---------------------------BODY--------------------------------------------------------------------->
+                      <div class="mechanic-explanation my-4">
+                        <h3>Design</h3>
+                        <p class="lead">
+                          The Puzzle Manager is one of the singleton classes I designed for keeping track of a specific task in the game. 
+                          This specific manager has track of which puzzles and sections of the game have already been discovered. 
+                          The main idea behind the puzzle manager was to ensure that the puzzles were solved in the correct order and prevent players from playing a melody that should unlock something forward in the game that they haven't reached yet. 
+                          The puzzle manager also allowed me to implement debug hotkeys which granted me earlier access to further sections in the game in order to test all puzzles without having to play the complete game each time. 
+                        </p>
+                        
+                          <!-----------CODE SAMPLE-------------------->
+                          <div class="code-sample row">
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-csharp">
+using System;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using FMODUnity;
+
+public class PuzzleManager : MonoBehaviour
+{
+    public static PuzzleManager PMInstance;
+
+    //GameObjects with puzzles 
+    [Header("Game Elements")]
+    [SerializeField] private GameObject kalimba;
+    [SerializeField] private GameObject checkers;
+    [SerializeField] private GameObject Door1;
+    [SerializeField] private GameObject CheckerTrigger;
+    [SerializeField] private GameObject Door2;
+
+
+    //Visual feedback for unsolved puzzles
+    [Header("Puzzle Sparkles")]
+    [SerializeField] public GameObject IcarusSparkles;
+    [SerializeField] public GameObject Husk1Sparkles;
+    [SerializeField] public GameObject BarDoor1Sparkles;
+    [SerializeField] public GameObject PPlate1_1Sparkles;
+    [SerializeField] public GameObject PPlate1_2Sparkles;
+    [SerializeField] public GameObject KalimbaDoor1Sparkles;
+    [SerializeField] public GameObject Leaver2Sparkles;
+    [SerializeField] public GameObject SecondHuskSparkles;
+    [SerializeField] public GameObject PPlate2_1Sparkles;
+    [SerializeField] public GameObject PPlate2_2Sparkles;
+    [SerializeField] public GameObject ChestSparkles;
+    [SerializeField] public GameObject CheckersSparkles;
+    [SerializeField] public GameObject FinalDoorSparkles;
+
+    [Header("Interactable Sparkles")]
+    [SerializeField] public GameObject CollectKalimbaSparkles;
+    [SerializeField] public GameObject FirstSheetSparkles;
+    [SerializeField] public GameObject CollectCheckersSparkles;
+
+    //Debug tools
+    [Header("Debug Controllers")]
+    [SerializeField] private InputActionReference _debugIcarus;
+    [SerializeField] private InputActionReference _openRoom1Door;
+    [SerializeField] private InputActionReference _restartScene;
+    [SerializeField] private InputActionReference _showChecker;
+    [SerializeField] private InputActionReference _solveChecker;
+    [SerializeField] private InputActionReference _openFinalDoor;
+
+    //Checks for solved puzzzles
+    public bool IcarusSolved = false;
+    public bool Husk1HasMoved = false;
+    public bool BarDoor1Opened = false;
+    public bool PressurePlate1Solved = false;
+    private bool isDoor1Open = false;
+    public bool KalimbaDoor1Solved = false;
+    public bool PressurePlate2Solved = false;
+
+    //checkerboard bool new reference
+    public bool CheckerboardSolved = false;
+    public bool finalDoorSolved = false;
+
+    //Managers
+    AudioManager audioManager;
+    FMODEvents fmod;
+    private bool kalimbaHasShown;
+
+    private void Start()
+    {
+        audioManager = AudioManager.AMInstance;
+        fmod = FMODEvents.FMInstance;
+    }
+
+    private void Awake()
+    {
+        PMInstance = this;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //Enable kalimba after icarus puzzle is solved
+        if (IcarusSolved)
+        {
+            kalimba.GetComponent&ltSphereCollider&gt().enabled = true;
+            IcarusSparkles.SetActive(false);
+            if (!kalimbaHasShown) 
+            {
+                CollectKalimbaSparkles.SetActive(true);
+                kalimbaHasShown = true;
+            }
+        }
+
+    }
+
+    //automatically solve icarus
+    private void OnDebugIcarus(InputAction.CallbackContext obj)
+    {
+        IcarusSolved = true;
+    }
+
+    //skip first room
+    private void OnOpenDoorOne(InputAction.CallbackContext obj)
+    {
+        if (!isDoor1Open)
+        {
+            Door1.GetComponent&ltAnimator&gt().SetTrigger("Open");
+            isDoor1Open = true;
+        }
+
+        else
+        {
+            Door1.GetComponent&ltAnimator&gt().SetTrigger("Close");
+            isDoor1Open = false;
+
+        }
+    }
+
+    private void OnRestartScene(InputAction.CallbackContext obj)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    private void OnShowChecker(InputAction.CallbackContext obj)
+    {
+        
+        CheckerTrigger.gameObject.SetActive(!CheckerTrigger.activeSelf);
+    }
+    private void OnSolveChecker(InputAction.CallbackContext obj)
+    {
+        CheckerboardSolved = !CheckerboardSolved;
+    }
+
+    //open final door automatically
+    private void OnOpenFinalDoor(InputAction.CallbackContext obj)
+    {
+        Door2.GetComponent&ltAnimator&gt().SetTrigger("Open");
+    }
+
+    //enable input actions
+    private void OnEnable()
+    {
+        _debugIcarus.action.performed += OnDebugIcarus;
+        _openRoom1Door.action.performed += OnOpenDoorOne;
+        _restartScene.action.performed += OnRestartScene;
+        _showChecker.action.performed += OnShowChecker;
+        _solveChecker.action.performed += OnSolveChecker;
+        _openFinalDoor.action.performed += OnOpenFinalDoor;
+    }
+
+    //disable input actions
+    private void OnDisable()
+    {
+        _debugIcarus.action.performed -= OnDebugIcarus;
+        _openRoom1Door.action.performed -= OnOpenDoorOne;
+        _restartScene.action.performed -= OnRestartScene;
+        _showChecker.action.performed -= OnShowChecker;
+        _solveChecker.action.performed -= OnSolveChecker;
+        _openFinalDoor.action.performed -= OnOpenFinalDoor;
+
+    }
+
+}     
+                            </code></pre>
+                          </div>
+                          <!------------END OF CODE SAMPLE------------>
+                      </div>
+                      <!----------------------END OF BODY------------------------------------------------------------------------->
+                    </div>
+                  </div>
+                </div>
+                <!--------------------END OF POWERUPS ----------------------------------------------->
+
+                <!--------------------MECHANIC: AUDIO IMPLEMENTATION---------------------------------------->
+                <div class="accordion-item">
+                  <h1 class="accordion-header">
+                    <button class="accordion-button collapsed btn-lg lead" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-audio" aria-expanded="false" aria-controls="collapse-audio">
+                      Audio Implementation
+                    </button>
+                  </h1>
+                  <div id="collapse-audio" class="accordion-collapse collapse" data-bs-parent="#shopping-mechanics-accordion">
+                    <div class="accordion-body">
+                      <!---------------------------BODY--------------------------------------------------------------------->
+                      <div class="mechanics-explanation my-4">
+                        <p class="lead">
+                          Audio was implemented with the help of FMOD. To simplify the audio calls and to have all event instances concentrated in the same component and just
+                          calling that same component instead of creating different instances throughout the game, I decided to create an audio manager and a class of FMOD events which
+                          were implemented using a singleton pattern to just call the instance of those classes to play sound cues wherever I required them. All FMOD events were assigned
+                          to the editor and then used in code.
+                        </p>
+                        
+
+                          <!--------------------------CODE SAMPLE------------------------->
+                          <div class="code-sample row">
+                            <h5>fMOD Events Singleton</h5>
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-csharp">
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using FMODUnity;
+
+public class FMODEvents : MonoBehaviour
+{
+    //FMOD events for kalimba notes
+    [Header("Kalimba Notes")]
+    [SerializeField] public EventReference KalimbaTile1;
+    [SerializeField] public EventReference KalimbaTile2;
+    [SerializeField] public EventReference KalimbaTile3;
+    [SerializeField] public EventReference KalimbaTile4;
+    [SerializeField] public EventReference KalimbaTile5;
+    [SerializeField] public EventReference KalimbaTile6;
+    [SerializeField] public EventReference KalimbaTile7;
+    [SerializeField] public EventReference KalimbaTile8;
+
+    //footsteps
+    [Header("Player")]
+    [SerializeField] public EventReference NewFootsteps;
+
+    //game music
+    [Header("Music")]
+    [SerializeField] public EventReference music;
+
+    //husk melodies events
+    [Header("Husk Melodies")]
+    [SerializeField] public EventReference HuskMelody1;
+    [SerializeField] public EventReference HuskMelody2;
+
+    //icarus puzzle sounds
+    [Header("Icarus Puzzle")]
+    [SerializeField] public EventReference IcarusDragImage;
+    [SerializeField] public EventReference IcarusDropImage;
+
+    //checker puzzle sounds
+    [Header("Checker Puzzle")]
+    [SerializeField] public EventReference CheckerDragImage;
+    [SerializeField] public EventReference CheckerDropImage;
+
+    //doors sounds
+    [Header("Doors")]
+    [SerializeField] public EventReference cabinetDoor;
+    [SerializeField] public EventReference normalDoor;
+    [SerializeField] public EventReference barDoor;
+
+    //prop sounds
+    [Header("Props")]
+    [SerializeField] public EventReference PressurePlate;
+    [SerializeField] public EventReference Bookshelf;
+    [SerializeField] public EventReference Chest;
+    [SerializeField] public EventReference Drawer;
+    [SerializeField] public EventReference Phone;
+
+
+    //feedback sounds
+    [Header("Player Feedback")]
+    [SerializeField] public EventReference CorrectAnswer;
+    [SerializeField] public EventReference Interact;
+
+
+
+    public static FMODEvents FMInstance;
+
+    private void Awake()
+    {
+        if (FMInstance == null)
+        {
+            FMInstance = this;
+        }
+    }
+}
+                            </code></pre>
+                          </div>
+                          <!------------END OF CODE SAMPLE------------->
+
+                          <!--------------------------CODE SAMPLE------------------------->
+                          <div class="code-sample row">
+                            <h5>Audio Manager Singleton</h5>
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-csharp">
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
+using UIComponents;
+
+public class AudioManager : MonoBehaviour
+{
+    public static AudioManager AMInstance;
+    private EventInstance musicInstance;
+
+    //list of events and emmiters
+    private List<EventInstance> eventInstances;
+    private List<StudioEventEmitter> eventEmiters;
+
+    //FMODEvnents class
+    private FMODEvents fmod;
+
+    private void Awake()
+    {
+        if (AMInstance == null) 
+        {
+            AMInstance = this;
+        }
+
+        eventInstances = new List<EventInstance>();
+        eventEmiters = new List<StudioEventEmitter>();
+    }
+
+    private void Start()
+    {
+        fmod = FMODEvents.FMInstance;
+        InitMusic(fmod.music);
+    }
+
+    //define play one shot function for easier playing
+    public void PlayOneShot(EventReference sound, Vector3 worldPos)
+    { 
+        RuntimeManager.PlayOneShot(sound, worldPos);
+    }
+
+    //create FMOD event instance and add it to my list
+    public EventInstance CreateEventInstance(EventReference reference)
+    { 
+        EventInstance eventInstance = RuntimeManager.CreateInstance(reference);
+        eventInstances.Add(eventInstance);
+        return eventInstance;
+    }
+
+    //create a FMOD emmiter and add it to my list
+    public StudioEventEmitter InitializeEventEmitter(EventReference eventReference, GameObject emitterGameObject) 
+    { 
+        StudioEventEmitter emitter = emitterGameObject.GetComponent<StudioEventEmitter>();
+        emitter.EventReference = eventReference;
+        eventEmiters.Add(emitter);
+        return emitter;
+    }
+
+    //start playing music
+    public void InitMusic(EventReference musicReference)
+    {
+        musicInstance = CreateEventInstance(musicReference);
+        musicInstance.start();
+    }
+
+    //Whenever I change from area in the game, the music changes
+    public void SetMusicArea(MusicPlayer area)
+    { 
+        musicInstance.setParameterByName("MusicArea", (float) area);
+    }
+
+    //release all used FMOD events
+    private void Cleanup() 
+    {
+        foreach(EventInstance eventInstance in eventInstances) 
+        {
+            eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            eventInstance.release();
+        }
+
+        foreach(StudioEventEmitter emitter in eventEmiters) 
+        {
+            emitter.Stop();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        Cleanup();
+    }
+} 
+                            </code></pre>
+                          </div>
+                          <!------------END OF CODE SAMPLE------------->
+                      </div>
+                      <!----------------------END OF BODY------------------------------------------------------------------------->
+                    </div>
+                  </div>
+                </div>
+                <!--------------------END OF AUDIO IMPLEMENTATION------------------------------------->
+
+          </div>
+
+          <!---------------------LINK TO REPO-------------------------->
+          <div class="row my-5 text-center">
+            <h2 class="display-5 text-dark p-5">Visit repo for full code</h2>
+            <div class="col-4"></div>
+            <div class="col-lg-4 ">
+              <div class="github-card" data-github="pedroeperezn/WIMMPortfolioCode" data-width="400" data-height="" data-theme="default"></div>
+            </div>
+          </div>
+          <!--END OF LINK TO REPO-->
+
+
+        </div>
+      </div>
+    </section>
+
+<!----------------------------------------------------------------END OF DEVELOPMENT----------------------------------------------------------------------------->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
+            <div class="credits">
+              <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
+            -->
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Script to apply code formatting -->
+  <script src="./prism/prism.js"></script>
+
+</body>
+
+</html>
