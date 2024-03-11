@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Pedro E. Perez - Everything Must Go!</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/game-controller-icon.png" rel="icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!--  Prism style sheet for code formatting-->
+  <link rel="stylesheet" href="./prism/prism.css">
+
+  <!-- =======================================================
+  * Template Name: DevFolio
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <div class="hero img-fluid" style="background-image: url(assets/img/EMG/emgSplash.png)">
+    <div class="overlay-mf"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <div class="spacer">
+
+          </div>
+        </div>
+        <container>
+
+          <a href="#portfolio-details" class="btn btn-lg btn-primary" role="button">About EMG</a>
+        </container>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <!-------------- PROJECT DETAILS -------------------->
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide">
+                  <img src="assets/img/EMG/emgIMG1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/EMG/emgIMG2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/EMG/emgIMG3.jpg" alt="">
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>High Pitch</strong>: Everything Must Go! is a competitive online multiplayer race game in which players will be contestants in a shopping game show. Their goal is to collect and checkout as many items as they can before the time runs out. The player with the biggest checked out value wins!</li>
+                <li><strong>Engine</strong>: Unreal Engine 4</li>
+                <li><strong>Roles</strong>: Gameplay Programmer, Audio Programmer</li>
+                <li><strong>Tools</strong>: C++, Visual Studio, FMOD Studio</li>
+                <li><strong>Dates of Development</strong>: Aug - Dec 2023</li>
+                <li><strong>VFS Arcade Page</strong>: <a href="https://vfs-gdpg.itch.io/everything-must-go">https://vfs-gdpg.itch.io/everything-must-go</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-------------- PROJECT DEVELOPMENT ----------------->
+        <div class="project-dev my-5">
+            <h1 class="text-center my-3">Development</h1>
+            <p class="lead text-justify py-3"> In "Everything Must Go!", I programmed network multiplayer mechanics and programmed/implemented audio functionality. This meant using replication and remote procedural calls
+              in most mechanics to ensure that the most relevant information was correctly shared between the server and clients. The mechanics with which I collaborated for the project
+              were mainly related to item interaction and spawning, player's inventory and score, implementation of power-ups, audio, minor UI programming and debugging tools implementation using ImGUI. </p>
+              
+
+              <div class="accordion accordion-flush" id="shopping-mechanics-accordion">
+
+                <!-------------------MECHANIC: SHOPPING ITEMS - INVENTORY - SCORING------------------->
+                <div class="accordion-item">
+                  <h1 class="accordion-header">
+                    <button class="accordion-button collapsed btn-lg lead" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-shopping-mechanics" aria-expanded="false" aria-controls="collapse-shopping-mechanics">
+                      Shopping items | Inventory | Scoring
+                    </button>
+                  </h1>
+                  <div id="collapse-shopping-mechanics" class="accordion-collapse collapse" data-bs-parent="#shopping-mechanics-accordion">
+                    <div class="accordion-body">
+
+                      <!-------------------------------BODY----------------------------------------------->
+                      <div class="mechanic-explanation my-4">
+                        <h3>Design</h3>
+                <p class="lead py-3">
+                  The core game loop of "Everything Must Go!" is based on the idea of players going around the level looking for items, filling their shopping cart with them
+                  , and checking them out to score points. This implies that each player has a limited space for items that they can carry at a time and that 
+                  each item must have a size, a monetary value and weight that will affect the player's movement as the cart gets heavier/fuller.  
+                  In order to score, players should carry their items to the checkout stand, which should translate the monetary value of each product into the score and clear them 
+                  from the cart. 
+                </p>
+
+                <!--------------------SHOPPING ITEMS------------------------------->
+                <div class="row">
+                  <h4>Shopping items</h4>
+                  <p class="lead">
+                    Given that items will have size and monetary value, it would be fair for those values to be related, meaning that the bigger items should be heavier and award
+                    more points to the player given that they meant a bigger sacrifice to carry around. 
+                    We also had the goal of making items easily accessible in the editor, modifiable, and expandable in order for our team's game designers to be able to
+                    easily add and tune the data of each item. In order to achieve this, we decided to use 
+                    Unreal Engine's Data Tables:
+                  </p>
+
+                  <div class="portfolio-img text-center">
+                    <img src="assets/img/EMG/emgDataTables.PNG" style="width: 70%">
+                  </div>
+                  
+                  <p class="lead my-3">Once the items were defined in the data tables, I created a C++ class for them including the data we exposed on the tables:</p>
+                  
+                  <!------ SCRIPT SAMPLE: HEADER FILE - ITEM SPAWNER ------>
+                  <div class="code-sample row">
+                    <div class="col-1"></div>
+                    <pre class="pre-scrollable col-10"><code class=" language-cpp">
+                      
+                      // Copyright (c) 2023 @ Runaway Concepts
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "EverythingMustGo/Components/EMGItemSpawner.h"
+#include "EverythingMustGo/Interfaces/InteractInterface.h"
+#include "GameFramework/Actor.h"
+#include "EverythingMustGo/Public/EMGUtils.h"
+
+
+#include "ShoppingItem.generated.h"
+
+class UNiagaraSystem;
+
+UCLASS()
+class EVERYTHINGMUSTGO_API AShoppingItem : public AActor, public IInteractInterface
+{
+  GENERATED_BODY()
+  
+public:	
+  // Sets default values for this actor's properties
+  AShoppingItem();
+
+  virtual void GetLifetimeReplicatedProps(TArray&ltFLifetimeProperty&gt& OutLifetimeProps) const override;
+  
+  UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+  UNiagaraComponent* NiagaraComponent;
+  
+  //Struct used in the player inventory to keep track of amount of items
+  UPROPERTY(EditAnywhere,BlueprintReadWrite)
+  FItemsInInventory Item;
+
+  UPROPERTY(EditAnywhere,BlueprintReadWrite)
+  AEMGItemSpawner* ItemSpawner;
+
+  UFUNCTION(NetMulticast,Reliable)
+  void SetParticle(UNiagaraSystem* _NS);
+
+  UPROPERTY(BlueprintReadWrite, ReplicatedUsing=OnRep_Change)
+  UNiagaraSystem* NS;
+
+  UFUNCTION()
+  void OnRep_Change(UNiagaraSystem* _NS);
+  
+};
+
+                    </code></pre>
+                  </div>
+                  <!----- END OF CODE SAMPLE ----->
+
+                  <p class="lead my-3">I also created a helper struct called FItemsInInventory, which would be the way in which the player could store the essential information of each shopping item they picked up:</p>
+
+                  <!------ SCRIPT SAMPLE: FItemsInInventory STRUCT ------>
+                  <div class="code-sample row">
+                    <div class="col-1"></div>
+                    <pre class="pre-scrollable col-10"><code class=" language-cpp">  
+USTRUCT(BlueprintType)
+struct FItemsInInventory : public FTableRowBase
+{
+
+  GENERATED_BODY()
+  
+  UPROPERTY(EditAnywhere, BlueprintReadOnly)
+  FString ItemType;
+
+  UPROPERTY(EditAnywhere, BlueprintReadOnly)
+  float Value;
+
+  UPROPERTY(EditAnywhere,BlueprintReadOnly)
+  TEnumAsByte&ltEItemSize&gt ItemSize;
+
+  UPROPERTY(EditAnywhere,BlueprintReadWrite)
+  UStaticMesh* ItemMesh;
+  
+  UPROPERTY(EditAnywhere,BlueprintReadWrite)
+  UNiagaraSystem* NiagaraParticles;
+  
+};
+                    </code></pre>
+                  </div>
+                  <!----- END OF CODE SAMPLE ----->
+
+                </div>
+                <!-----END OF SHOPPING ITEMS----->
+
+                <!--------------------ITEM SPAWNER------------------------------->
+                <div class="row my-3">  
+                  <h4>Item Spawner</h4>
+                  <p class="lead my-3">For spawning items, I engineered an actor that would serve as a spawner. 
+                    Said spawner should be able to grab data from a selected data table assignable in the editor, 
+                    set properties for a "ShoppingItem" actor, and spawn them constantly at a fixed amount of time.</p>
+                  
+                  <!------ SCRIPT SAMPLE: ITEM SPAWNER SPAWN FUNCTION ------>
+                  <div class="code-sample row">
+                    <div class="col-1"></div>
+                    <pre class="pre-scrollable col-10"><code class=" language-cpp">
+void AEMGItemSpawner::Server_Spawn_Implementation()
+{
+  //Check if the spawner is going to be a shopping item and that the spawner is enabled
+  if(bCanSpawn && TypeOfSpawnable == ETypoeOfSpawnable::ShoppingItem)
+  {
+    //Set spawning parameters
+    FActorSpawnParameters ActorSpawnParams;
+    ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+  
+    //Make sure that the data table was assigned
+    if(!ItemDataTable)
+    {
+      UE_LOG(LogTemp,Warning,TEXT("No data table loaded"));
+      return;
+    }
+  
+    //Check how many different items are there in the DT
+    TArray&ltFName&gt ItemsInDT = ItemDataTable->GetRowNames();
+    int32 NumberOfItems = ItemsInDT.Num();
+  
+    if(NumberOfItems == 0)
+    {
+      UE_LOG(LogTemp,Warning,TEXT("Empty Data Table"));
+      return;
+    }
+  
+    //Create a new item with the properties of a random row in the DT
+    int32 RandomItemNumber = FMath::RandRange(0, NumberOfItems-1);
+    FItemsInInventory* newItem = ItemDataTable->FindRow&ltFItemsInInventory&gt(ItemsInDT[RandomItemNumber],TEXT("Looking for random item"));
+    
+    
+    checkf(newItem, TEXT("Error loading item from Data Table to spawn item"));
+  
+    ItemsInInventory = *newItem;
+  
+    //Spawn shopping item with properties from the data table row
+    AShoppingItem* ShoppingItem = GetWorld()->SpawnActor&ltAShoppingItem&gt(ItemToSpawnBP,
+      BillboardComponent->GetComponentLocation(),
+      BillboardComponent->GetComponentRotation(), ActorSpawnParams);
+  
+    if(ShoppingItem)
+    {
+      ShoppingItem->Item = ItemsInInventory;
+  
+      ShoppingItem->FindComponentByClass&ltUStaticMeshComponent&gt()->SetStaticMesh(ItemsInInventory.ItemMesh);
+      ShoppingItem->SetParticle(ItemsInInventory.NiagaraParticles);
+      
+      ShoppingItem->ItemSpawner = this;
+      bCanSpawn = false;
+
+      if(ShoppingItem->Item.ItemSize == EItemSize::Large)
+      {
+        PlayHighValueAudioCue();
+      }
+    }
+  }
+}
+                    </code></pre>
+                  </div>
+                  <!------- END OF SCRIPT SAMPLE ------->
+
+                </div>
+                <!-------END OF ITEM SPAWNER------>
+                
+                <!--------------------PLAYER INVENTORY---------------------------->
+                <div class="row my-3">
+                  <h4>Player Inventory</h4>
+                  <p class="lead my-3">The player inventory is the UActorComponent responsible for keeping track of how many and which items the player is carrying at a given time in their cart. 
+                    It holds all the information regarding cart capacity, cart's remaining space, and current stored value, 
+                    and also declares functions that will place items and new items into the cart, remove them, or empty them.
+                  </p>
+                  
+                  <!------ SCRIPT SAMPLE: ITEM SPAWNER SPAWN FUNCTION ------>
+                  <div class="code-sample row">
+                    <div class="col-1"></div>
+                    <pre class="pre-scrollable col-10"><code class=" language-cpp">
+// Copyright (c) 2023 @ Runaway Concepts
+#pragma once
+
+#include "CoreMinimal.h"
+#include "Components/ActorComponent.h"
+#include "EMGUtils.h"
+
+#include "EMGPlayerInventory.generated.h"
+
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAddInventoryItem, FItemsInInventory, ItemAdded);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnRemoveInventoryItem, FItemsInInventory, ItemRemoved);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCheckOut);
+
+
+UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+class EVERYTHINGMUSTGO_API UEMGPlayerInventory : public UActorComponent
+{
+  GENERATED_BODY()
+
+public:	
+  // Sets default values for this component's properties
+  UEMGPlayerInventory();
+
+  UPROPERTY(EditAnywhere,BlueprintReadWrite)
+  float InventoryCapacity = 10;
+
+  UPROPERTY()
+  float InitialInventoryCapacity;
+
+  UPROPERTY(EditAnywhere,BlueprintReadWrite)
+  float ItemCount;
+  
+  UPROPERTY(EditAnywhere,BlueprintReadWrite)
+  float ItemSpace;
+
+  UPROPERTY()
+  bool bIsWeightAffectingMovement = true;
+
+  UPROPERTY(EditAnywhere,BlueprintReadWrite)
+  TArray&ltFItemsInInventory&gt PlayerInventory;
+  
+  UPROPERTY(EditAnywhere,BlueprintReadWrite)
+  float TotalValueCollected;
+
+  UPROPERTY(BlueprintReadOnly)
+  ACharacter* PlayerRef;
+
+  UFUNCTION(Server,Reliable,BlueprintCallable)
+  void Server_AddItemToInventory(FItemsInInventory ItemToAdd);
+  
+  UFUNCTION(NetMulticast, Reliable,BlueprintCallable)
+  void Multicast_AddToInventory(FItemsInInventory ItemsInInventory);
+
+  UFUNCTION(Server,Reliable,BlueprintCallable)
+  void Server_AddMultipleItemsToInventory(const TArray&ltFItemsInInventory&gt& ItemsToAdd);
+
+  UFUNCTION(NetMulticast, Reliable,BlueprintCallable)
+  void Multicast_AddMultipleItemsToInventory(const TArray&ltFItemsInInventory&gt& ItemsToAdd);
+
+  UFUNCTION(Server,Reliable,BlueprintCallable)
+  void Server_RemoveLastItem();
+  
+  UFUNCTION(NetMulticast,Reliable,BlueprintCallable)
+  void MulticastRemoveLastItem();
+
+  UFUNCTION(Server,Reliable,BlueprintCallable)
+  void Server_RemoveFirstItem();
+  
+  UFUNCTION(NetMulticast,Reliable,BlueprintCallable)
+  void MulticastRemoveFirstItem();
+
+  UFUNCTION()
+  void UpdateTotalValueCollected();
+
+
+  UFUNCTION(Server,Reliable, BlueprintCallable)
+  void Server_EmptyInventory();
+
+  UFUNCTION(NetMulticast,Reliable)
+  void Multicast_EmptyInventory();
+
+  UFUNCTION()
+  void UpdatePlayersCartWeight();
+
+  UFUNCTION(BlueprintCallable)
+  FORCEINLINE bool IsFull() const
+  {
+    return ItemSpace == 0;
+  }
+
+  UPROPERTY(BlueprintAssignable)
+  FOnAddInventoryItem OnAddItemToInventory;
+  UPROPERTY(BlueprintAssignable)
+  FOnRemoveInventoryItem OnRemoveInventoryItem;
+  UPROPERTY(BlueprintAssignable)
+  FOnCheckOut OnCheckOut;
+
+protected:
+
+  // Called when the game starts
+  virtual void BeginPlay() override;
+
+  UPROPERTY(EditAnywhere,BlueprintReadOnly, Category="Item Slowdown Multipliers")
+  float MaxAccelerationMutliplier;
+
+  UPROPERTY(EditAnywhere,BlueprintReadOnly, Category="Item Slowdown Multipliers")
+  float MaxSpeedMultiplier;
+
+  UPROPERTY(EditAnywhere,BlueprintReadOnly, Category="Item Slowdown Multipliers")
+  float MassMultiplier;
+
+  UPROPERTY(EditAnywhere,BlueprintReadOnly, Category="Item Slowdown Multipliers")
+  float FrictionMultiplier;
+
+public:	
+  // Called every frame
+  virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+    
+};
+                    </code></pre>
+                  </div>
+                  <!------- END OF SCRIPT SAMPLE ------->
+                </div>
+                <!-------END OF ITEM SPAWNER------>
+
+                <!-----------------COLLECTING ITEMS----------------------------->
+                <div class="row my-3">
+                  <h4>Collecting Items</h4>
+                  <p class="lead"> The method for storing items in the cart is fairly simple. 
+                    Each Shopping Item holds a variable of the FItemsInInventory type which, 
+                    when a player interacts with it (and if there is still space remaining for the item in the inventory), 
+                    will be copied into an array of FItemsInInventory inside of the player inventory. 
+                    In order for the server and clients to have proper knowledge of the item that was stored and its weight, size, and monetary values, the function needed to be called with an RPC:
+                  </p>
+
+                  <!------ SCRIPT SAMPLE: COLLECTING ITEMS ------>
+                  <div class="code-sample row">
+                    <div class="col-1"></div>
+                    <pre class="pre-scrollable col-10"><code class=" language-cpp">
+void UEMGPlayerInventory::Server_AddItemToInventory_Implementation(FItemsInInventory ItemToAdd)
+{
+  Multicast_AddToInventory(ItemToAdd);
+}
+
+//Adds new collected item to the players inventory
+void UEMGPlayerInventory::Multicast_AddToInventory_Implementation(FItemsInInventory ItemsInInventory)
+{
+  //Add the new item as a copy
+  ItemCount += ItemsInInventory.ItemSize;
+  ItemSpace -= ItemsInInventory.ItemSize;
+
+  PlayerInventory.Add(ItemsInInventory);
+  UpdateTotalValueCollected();
+  OnAddItemToInventory.Broadcast(ItemsInInventory);
+
+  //TODO: Implement logic for affecting the players movement
+  UpdatePlayersCartWeight();
+}
+                    </code></pre>
+                  </div>
+                  <!------- END OF SCRIPT SAMPLE ------->
+
+                  <!--COLLECTING ITEMS GIF-->
+                  <div class="portfolio-img text-center my-3">
+                    <img src="assets/img/EMG/emgCollectItemGIF.gif" style="width: 50%">
+                  </div>
+
+                </div>
+                <!-------END OF COLLECTING ITEMS------>
+
+                      </div>
+                      <!-------------------------------END OF BODY---------------------------------------->
+
+                    </div>
+                  </div>
+                </div>
+                <!-------------------END OF SHOPPING ITEMS - INVENTORY - SCORING ----------------->
+                
+                <!--------------------MECHANIC - POWER-UPS ----------------------------------------->
+                <div class="accordion-item">
+                  <h1 class="accordion-header">
+                    <button class="accordion-button collapsed btn-lg lead" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-powerup-mechanics" aria-expanded="false" aria-controls="collapse-powerup-mechanics">
+                      Power-ups
+                    </button>
+                  </h1>
+                  <div id="collapse-powerup-mechanics" class="accordion-collapse collapse" data-bs-parent="#shopping-mechanics-accordion">
+                    <div class="accordion-body">
+                      <!---------------------------BODY--------------------------------------------------------------------->
+                      <div class="mechanic-explanation my-4">
+                        <h3>Design</h3>
+                        <p class="lead">
+                          In order for gameplay to have more variation and possibilities, as well as to implement catch-up mechanics, we decided to design a power-up system based 
+                          on existing mechanics that could enhance the player's abilities momentarily and gain an advantage over the others. The design team decided that we were going
+                          to work on 5 power-ups:
+                        
+                          <ul class="lead">
+                            <li>Speed Boost: The player's acceleration and maximum speed would increase considerably.</li>
+                            <li>Shield: The player would be immune to ramming (can't loose items nor be propelled when attacked by other players).</li>
+                            <li>Infinite Inventory: The player's cart would have a very big cap on the items they can carry, making it practically limitless.</li>
+                            <li>Spawn Goo Trap: Players can spawn behind them a trap that will make players get stuck momentarily.</li>
+                            <li>Spawn Slippery Trap: Players can spawn behind them a trap that will make other players spin and loose control of the cart momentarily. </li>
+                          </ul>
+                        
+                          <p class="lead">I designed a system that took advantage of the spawning logic that was previously used for spawning shopping items, 
+                          as well as engineered and implemented a power-up actor component that was in charge of the logic of assigning and using power-ups.</p>
+                        </p>
+
+                        <!---------------MECHANIC EXPLANATION: POWER-UP PICK-UP ITEM IMPLEMENTATION------------------>
+                        <div class="row">
+                          <h3>Power-up pick-up item</h3>
+                          <p class="lead">The way in which players can get a power-up assigned is by colliding with a power-up pickup, 
+                            which is spawned in the level in a very similar fashion that the shopping items. 
+                            I created an "EMGPowerupPickup" class which inherits from the "ShoppingItem" class. 
+                            This made spawning power-up pickups easy, accessible in the editor, and familiar to my Level Designer, 
+                            who only needed to indicate to the spawner that this spawner would be for power-up pickups and the spawner did the rest:
+                          </p>
+                          <!-----------CODE SAMPLE-------------------->
+                          <div class="code-sample row">
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-cpp">
+//Check if the assigned type of item is a shopping item or a power-up pickup
+else if(bCanSpawn && TypeOfSpawnable == ETypoeOfSpawnable::Powerup )
+{
+  //Set spawning param
+  FActorSpawnParameters ActorSpawnParams;
+  ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+  
+  AEMG_PowerupPickup* Powerup = GetWorld()->SpawnActor&ltAEMG_PowerupPickup&gt(ItemToSpawnBP,
+  BillboardComponent->GetComponentLocation(),
+  BillboardComponent->GetComponentRotation(), ActorSpawnParams);
+  if(Powerup)
+  {
+    Powerup->ItemSpawner = this;
+    bCanSpawn = false;
+  }
+}      
+                            </code></pre>
+                          </div>
+                          <!------------END OF CODE SAMPLE------------>
+
+                          <!-----------POWER-UP PICKUP IMAGE-------->
+                          <div class="portfolio-img text-center">
+                            <img src="assets/img/EMG/EMGPowerupPickup.png" style="width: 40%">
+                          </div>
+                          <!-----------END OF IMAGE----------------->
+                        </div>
+                        <!--------------------END OF POWER-UP PICK-UP---------------------------->
+
+                        <!--------------------MECHANIC EXPLANATION: ASSIGNMENT OF POWER-UPS------------------------------------------------>
+                        <div class="row my-3">
+                          <h3>Power-up Assignment</h3>
+                          <p class="lead">
+                            If the player isn't already a power-up holder, whenever colliding with a power-up pickup a power-up will be assigned to them. The assignment of the power-up depends on
+                            the current scores in the match, meaning that players with bigger scores will most likely be assigned the Goo Bomb or the Slippery Trap. Players with an average score will
+                            tend to be assigned the super speed power-up, and players that are behind in score will be more likely to be assigned either infinite inventory or the shield,
+                            which can potentially give a greater advantage on the match. 
+                          </p>
+
+                          <!------------START OF CODE SAMPLE----------->
+                          <div class="code-sample row">
+                            <h5>Get match score average</h5>
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-cpp">
+//Get average scores on match
+int UEMGPowerup::GetPlayerScoreAverage()
+{
+  int ScoreSum = 0;
+  int ScoreAverage = 0;
+  
+  //Get player array
+  TArray&ltAPlayerState&gt PlayerStates = GetWorld()->GetGameState()->PlayerArray;
+  
+  if(PlayerStates.Num() == 0)
+  {
+    return 0;
+  }
+
+  //for each player, get their score and add them to a sum, for later getting the average score
+  for (auto PlayerState : PlayerStates)
+  {
+    ScoreSum += PlayerState->GetScore();
+  }
+
+  ScoreAverage = ScoreSum/PlayerStates.Num();
+
+  return ScoreAverage;
+}
+                            </code></pre>
+                          </div>
+                          <!------------END OF CODE SAMPLE------------->
+
+                          <!------------START OF CODE SAMPLE----------->
+                          <div class="code-sample row my-3">
+                            <h5>Get power-up based on match score average</h5>
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-cpp">
+//Get the power-up that is going to be assigned to the player 
+EPowerUpType UEMGPowerup::GetRandomPowerup()
+{
+  //Get score average in match
+  float avgScore = GetPlayerScoreAverage();
+
+  //Tiers probability of power-up per tier (tier1 is More Useful, tier3 is less useful)
+  float tier1 = 0.25;
+  float tier2 = 0.35;
+  float tier3 = 0.40;
+
+  if(!PlayerRef)
+  {
+    return EPowerUpType::None;
+  }
+  
+  //Depending on the player's score compared with the average, assign more probability to specific power-up tiers
+  if(PlayerRef->GetPlayerState()->GetScore() < avgScore * 0.5)
+  {
+    tier1 += 0.35;
+    tier2 -= 0.10;
+    tier3 -= 0.25;
+  }
+
+  if(PlayerRef->GetPlayerState()->GetScore() > avgScore * 0.5)
+  {
+    tier1 -= 0.1;
+    tier2 -= 0.1;
+    tier3 += 0.2;
+  }
+
+  //generate a random number from 0 to 1 and then compare with the tier values, having probability depending on how players were doing on the match
+  float RandomTierValue = FMath::FRand();
+
+  if(RandomTierValue < tier1)
+  {
+    //assign powerup between InfiniteInventory and Shield	
+    int32 RandomValue = FMath::RandRange(static_cast&ltint32&gt(EPowerUpType::InfiniteInventory),static_cast&ltint32&gt(EPowerUpType::Shield));
+    return static_cast&ltEPowerUpType&gt(RandomValue);
+  }
+
+  if(RandomTierValue < tier1 + tier2)
+  {
+    //assign SpeedBoost
+    return EPowerUpType::SpeedBoost;
+  }
+
+  else
+  {
+    //assign between Slippery and Gooey
+    int32 RandomValue = FMath::RandRange(static_cast&ltint32&gt(EPowerUpType::Slippery),static_cast&ltint32&gt(EPowerUpType::Gooey));
+    return static_cast&ltEPowerUpType&gt(RandomValue);
+  }
+}
+                            </code></pre>
+                          </div>
+                          <!------------END OF CODE SAMPLE------------->
+
+                          <p class="lead">Once the selection of the power-up has been done, 
+                            I implemented an RPC that allows the server to assign the power-up that was assigned to the player and communicate it to them.
+                          </p>
+
+                          <!-----------START OF CODE SAMPLE----------->
+                          <div class="code-sample row my-3">
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-cpp">
+UFUNCTION(Server,Reliable,BlueprintCallable)
+void Server_AssignPlayerPowerup();
+UFUNCTION(NetMulticast,Reliable)
+void Multicast_AssignPlayerPowerup(EPowerUpType PowerupToAssign);
+                            </code></pre>
+                          </div>
+                          <!-----------END OF CODE SAMPLE----------->
+
+                          <!-----------START OF CODE SAMPLE----------->
+                          <div class="code-sample row my-3">
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-cpp">
+void UEMGPowerup::Server_AssignPlayerPowerup_Implementation()
+{
+  EPowerUpType AssignedPowerup = GetRandomPowerup();
+  Multicast_AssignPlayerPowerup(AssignedPowerup);
+}
+
+void UEMGPowerup::Multicast_AssignPlayerPowerup_Implementation(EPowerUpType PowerupToAssign)
+{
+  CurrentPowerup = PowerupToAssign;
+}
+                            </code></pre>
+                          </div>
+                          <!-----------END OF CODE SAMPLE----------->
+
+                          <!-----------POWER-UP PICKUP GIF-------->
+                          <div class="portfolio-img text-center">
+                            <img src="assets/img/EMG/EMGPowerupPickupGIF.gif" style="width: 40%">
+                          </div>
+                          <!-----------END OF GIF----------------->
+                          
+                        </div>
+                        <!--------------------END OF ASSIGNMENT OF POWER-UPS----------------------->
+
+                        <!---------------MECHANIC EXPLANATION: USING POWER-UPS--------------------------------------->
+                        <div class="row my-3">
+                          <h3>Using Power-ups</h3>
+                          <p class="lead">When a player has a power-up assigned, they can use the power-up input action, which will trigger whichever
+                            power-up the player has currently assigned. In order to correctly execute the modifier that the player has assigned,
+                            we engineered a data structure that holds all the possible power-ups available and the component has a variable that 
+                            of said type that stores which is the current power-up that the player can make use of. If the player triggers a power-up and 
+                            has one currently assigned, the <b>UsePowerup()</b> RPC method will be called, which will trigger the corresponding modifier depending on
+                            the current power-up variable. For the power-ups that have a time duration, I decided to make use of a timer that will call
+                            the <b>RevertPowerup()</b> RPC that, with very similar logic, will check which is the current active power-up and revert its 
+                            effects once the specified time has finished.
+                          </p>
+
+                          <!------------START OF CODE SAMPLE----------->
+                          <div class="code-sample row">
+                            <h5>Use power-up: server call</h5>
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-cpp">
+//Server call for using power-up
+UFUNCTION(Server, Reliable, BlueprintCallable)
+void Server_UsePowerup();
+                            </code></pre>
+                          </div>
+                          <!------------END OF CODE SAMPLE------------->
+                          
+                          <!------------START OF CODE SAMPLE----------->
+                          <div class="code-sample row">
+                            <h5>Use power-up</h5>
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-cpp">
+void UEMGPowerup::Server_UsePowerup_Implementation()
+{
+  //Check which is the current assigned power-up
+  switch (CurrentPowerup)
+  {
+  
+  //Speed power-up call  
+  case EPowerUpType::SpeedBoost:
+    {
+      Server_SpeedPowerup();
+      GetWorld()->GetTimerManager().SetTimer(PowerupTimerHandle,this, &UEMGPowerup::Server_RevertPowerup,SpeedPowerupDuration,false);
+      OnPlaySpeedCue.Broadcast();
+      break;
+    }
+      
+  //Infinite inventory power-up call  
+  case EPowerUpType::InfiniteInventory:
+    {
+      InfiniteInventory();
+      //CurrentPowerupDuration = InventoryPowerupDuration;
+      GetWorld()->GetTimerManager().SetTimer(PowerupTimerHandle,this, &UEMGPowerup::Server_RevertPowerup,InventoryPowerupDuration,false);
+      OnPlayInfiniteCue.Broadcast();
+      break;
+    }
+
+  //Shield power-up call
+  case EPowerUpType::Shield:
+    {
+      Server_UseShieldPowerup();
+      GetWorld()->GetTimerManager().SetTimer(PowerupTimerHandle,this, &UEMGPowerup::Server_RevertPowerup,ShieldPowerupDuration,false);
+      OnPlayShieldCue.Broadcast();
+      break;
+    }
+
+  //Goo trap power-up call
+  case EPowerUpType::Gooey:
+    {
+      if(!GooeyHazardRef)
+      {
+        return;
+      }
+      if(!PowerupSpawn)
+      {
+        return;
+      }
+      
+      //Set spawn parameters
+      FVector spawningLocation = PowerupSpawn->GetComponentLocation();
+
+      //Spawn trap actor
+      AEMG_ObstacleHazard* GooeyHazard = GetWorld()->SpawnActor&ltAEMG_ObstacleHazard&gt(GooeyHazardRef,spawningLocation,
+        GetOwner()->GetActorRotation(),PowerupSpawnParams);
+
+
+      OnPlayGooeyCue.Broadcast();
+      Server_RevertPowerup();
+      break;
+    }
+
+  //Slippery trap power-up call
+  case EPowerUpType::Slippery:
+    {
+      if(!SlipperyHazardRef)
+      {
+        return;
+      }
+      if(!PowerupSpawn)
+      {
+        return;
+      }
+      
+      //Set spawn parameters
+      FVector spawningLocation = PowerupSpawn->GetComponentLocation();
+
+      //Spawn slippery actor 
+      AEMG_SlipperyHazzard* slipperyHazard = GetWorld()->SpawnActor&ltAEMG_SlipperyHazzard&gt(SlipperyHazardRef,spawningLocation,
+        GetOwner()->GetActorRotation(),PowerupSpawnParams);
+
+      OnPlaySlipperyCue.Broadcast();
+      Server_RevertPowerup();
+      break;
+    }
+    
+  }
+}
+                            </code></pre>
+                          </div>
+                          <!------------END OF CODE SAMPLE------------->
+
+                          <!------------START OF CODE SAMPLE----------->
+                          <div class="code-sample row">
+                            <h5>Revert Power-up: RPC Call</h5>
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-cpp">
+UFUNCTION(Server,Reliable,BlueprintCallable)
+void Server_RevertPowerup();
+UFUNCTION(NetMulticast,Reliable)
+void Multicast_RevertPowerup();  
+                            </code></pre>
+                          </div>
+                          <!------------END OF CODE SAMPLE------------->
+
+                          <!------------START OF CODE SAMPLE----------->
+                          <div class="code-sample row">
+                            <h5>Revert Power-up</h5>
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-cpp">
+void UEMGPowerup::Server_RevertPowerup_Implementation()
+{
+  Multicast_RevertPowerup();
+}
+
+void UEMGPowerup::Multicast_RevertPowerup_Implementation()
+{
+  
+  //Check which power-up is being used
+  switch (CurrentPowerup)
+  {
+    //Call the corresponding method that will revert the effects of the power-up
+    //For traps, it only sets the current power-up to none
+    case EPowerUpType::SpeedBoost:
+      RevertSpeedPowerup();
+      OnStopSpeedCue.Broadcast();
+      break;
+    
+    case EPowerUpType::InfiniteInventory:
+      RevertInfiniteInventory();
+      OnStopInfiniteCue.Broadcast();
+      break;
+
+    case EPowerUpType::Shield:
+      OnStopShieldCue.Broadcast();
+      break;
+    
+  }
+  
+  CurrentPowerup = EPowerUpType::None;
+  PlayerRef->ResetPowewrupWidget();
+  CurrentPowerupDuration = 0;
+} 
+                            </code></pre>
+                          </div>
+                          <!------------END OF CODE SAMPLE------------->
+
+                          <!------------START OF CODE SAMPLE----------->
+                          <div class="code-sample row">
+                            <h5>Speed power-up</h5>
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-cpp">
+void UEMGPowerup::Multicast_SpeedPowerup_Implementation()
+{
+  if(!PlayerRef)
+  {
+    return;
+  }
+
+  //Set duration of the power-up
+  CurrentPowerupDuration = SpeedPowerupDuration;
+  
+  //Clears weight of the cart from affecting the movement
+  PlayerRef->InventoryComp->bIsWeightAffectingMovement = false;
+  
+  //Sets new parameters for quicker movement
+  PlayerRef->GetCharacterMovement()->MaxWalkSpeed = PowerUpSettings.Speed;
+  PlayerRef->GetCharacterMovement()->MaxAcceleration = PowerUpSettings.Acceleration;
+  const FRotator PlayerRotation = PlayerRef->GetCharacterMovement()->RotationRate; 
+  PlayerRef->GetCharacterMovement()->RotationRate = FRotator(PlayerRotation.Pitch,PowerUpSettings.RotationRate,PlayerRotation.Roll);	
+}
+
+void UEMGPowerup::RevertSpeedPowerup()
+{
+  PlayerRef->InventoryComp->bIsWeightAffectingMovement = true;
+  
+  PlayerRef->GetCharacterMovement()->MaxWalkSpeed = PlayerRef->InitialMaxSpeed;
+  PlayerRef->GetCharacterMovement()->RotationRate = PlayerRef->InitialRotationRate;
+  PlayerRef->GetCharacterMovement()->MaxAcceleration = PlayerRef->InitialMaxAcceleration;
+}
+                            </code></pre>
+                          </div>
+                          <!------------END OF CODE SAMPLE------------->
+
+                          <!------------START OF CODE SAMPLE----------->
+                          <div class="code-sample row">
+                            <h5>Infinite inventory power-up</h5>
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-cpp">
+void UEMGPowerup::InfiniteInventory()
+{
+  //Blocks weight from affecting player movement
+  PlayerRef->InventoryComp->bIsWeightAffectingMovement = false;
+
+  //Sets power-up duration
+  CurrentPowerupDuration = InventoryPowerupDuration;
+  
+  //Sets movement to normal
+  PlayerRef->GetCharacterMovement()->MaxAcceleration = PlayerRef->InitialMaxAcceleration;
+  PlayerRef->GetCharacterMovement()->MaxWalkSpeed = PlayerRef->InitialMaxSpeed;
+  PlayerRef->GetCharacterMovement()->GroundFriction = PlayerRef->InitialGroundFriction;
+  PlayerRef->GetCharacterMovement()->Mass = PlayerRef->InitialMass;
+  
+  //Increase inventory capacity to 100
+  PlayerRef->InventoryComp->InventoryCapacity = InventoryPowerUpCap;
+}
+
+void UEMGPowerup::RevertInfiniteInventory()
+{
+  PlayerRef->InventoryComp->InventoryCapacity = PlayerRef->InventoryComp->InitialInventoryCapacity;
+  PlayerRef->InventoryComp->bIsWeightAffectingMovement = true;
+  PlayerRef->InventoryComp->UpdatePlayersCartWeight();
+}
+                            </code></pre>
+                          </div>
+                          <!------------END OF CODE SAMPLE------------->
+
+                        </div>
+                        <!---------------END OF USING POWER-UPS------------------------------------>
+                      </div>
+                      <!----------------------END OF BODY------------------------------------------------------------------------->
+                    </div>
+                  </div>
+                </div>
+                <!--------------------END OF POWERUPS ----------------------------------------------->
+
+                <!--------------------MECHANIC: AUDIO IMPLEMENTATION---------------------------------------->
+                <div class="accordion-item">
+                  <h1 class="accordion-header">
+                    <button class="accordion-button collapsed btn-lg lead" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-audio" aria-expanded="false" aria-controls="collapse-audio">
+                      Audio Implementation
+                    </button>
+                  </h1>
+                  <div id="collapse-audio" class="accordion-collapse collapse" data-bs-parent="#shopping-mechanics-accordion">
+                    <div class="accordion-body">
+                      <!---------------------------BODY--------------------------------------------------------------------->
+                      <div class="mechanics-explanation my-4">
+                        <!--TODO: INSERT AUDIO STUFF-->
+                        <p class="lead">
+                          For the audio implementation, we wanted to have a very cartoony library of SFX that matched the silly vibe of a game show. We collaborated with 3 sound designers who delivered high-quality assets and implemented the events using FMOD. 
+                          My main task was to design the systems for the implementation of the events considering all the network implications that our game had. 
+                          This meant differentiating between which audio events should be fully local, which should be replicated, and which should run only on the client. 
+                          Most of the audio implementation was done in blueprints, given that they offer very easy communication with FMOD events and components. 
+                          Callbacks were also used mainly for very specific parts of code in which it was very clear that a sound cue should be played in that part of the execution of the code.
+                        </p>
+                        
+                        <!------------------------------------MUSIC IMPLEMENTATION-------------------------------------------->
+                        <div class="row my-3">
+                          <h3>Music</h3>
+                          <p class="lead">In order to place the music in the game, I created a separate actor with no mesh attached to it that holds an FMOD Event emitter. 
+                            This blueprint has a very simple task: it will play the corresponding music to the level we currently are (either main menu, win screen, or main game), 
+                            and stop and release the music whenever the match has ended or the player has traveled to a different level. (Press the graph to see connections).
+                          </p>
+
+                          <!------------------------------BLUEPRINT SAMPLE------------------>
+                          <div>
+                            <h5 class="mt-3">Music Actor Begin Play</h5>
+                            <div class="row text-center">
+                              <iframe id="emgMusicPlayerBeginPlayBP" src="https://blueprintue.com/render/a9q9wlz6/" scrolling="no" allowfullscreen class="col-12" zoom=-10 height="400px"></iframe>
+                            </div> 
+                          </div>
+                          <!------------------------------END OF BLUEPRINT-------------->
+
+                          <!------------------------------BLUEPRINT SAMPLE------------------>
+                          <div>
+                            <h5 class="mt-3">Music Actor Tick</h5>
+                            <div class="row text-center">
+                              <iframe id="emgMusicPlayerBeginPlayBP" src="https://blueprintue.com/render/l3y1ogwy/" scrolling="no" allowfullscreen class="col-12" zoom=-10 height="400px"></iframe>
+                            </div> 
+                          </div>
+                          <!------------------------------END OF BLUEPRINT-------------->
+
+                          <!--------------------------------------------END OF MUSIC IMPLEMENTATION-------------------------------------------------------->
+
+                          <!-----------------------------------SHOW HOST AND AUDIENCE IMPLEMENTATION------------------------------------>
+                          <h3 class="my-3">Show Host & Audience Actors</h3>
+                          <p class="lead">The show host and audience share a very similar logic with the music blueprint. 
+                            The main difference lies in the fact that both the show host and the audience need to react to events that are happening in the game. 
+                            This means that, whenever something happens in the game that should trigger the show host or audience cue, 
+                            there must be a Remote Procedural Call in order to reproduce the cue for every client.
+                          </p>
+                          
+                          <!---------------BLUEPRINT EXAMPLE-------------->
+                          <h5 class="mt-3">Begin Play</h5>
+                          <p>On this blueprint, I'm storing the Game State into a variable so that I'm able to monitor the game state from within the show host actor. This allowed the show host
+                            access to the match timer in order to play the correct time cues for the match. </p>
+                          <div>
+                            <div class="row text-center">
+                              <iframe src="https://blueprintue.com/render/7_s4r-op/" scrolling="no" allowfullscreen class="col-12" zoom=-10 height="400px"></iframe>
+                            </div> 
+                          </div>
+                          <!----------------END OF BLUEPRINT EXAMPLE------------------>
+
+                          <!-----------------BLUEPRINT EXAMPLE-------------------->
+                          <h5 class="mt-3">Tick</h5>
+                          <p>On the tick event, I compared the current match timer to the number of seconds that each cue was recorded for. We had one cue for 2 minutes remaining,
+                            1 minute, 30 seconds, and the final countdown at 5 seconds. The sound collaborators implemented a system in FMOD in which I just needed to change a parameter
+                            from the time cue event to change the cue that was going to be played. When a cue is reached, the blueprint sets the parameter and calls the Play Time Cue function, 
+                            which checks if the match is running and if there is no other cue playing to avoid overlapping audio cues. </p>
+                          <div>
+                            <div class="row text-center">
+                              <iframe src="https://blueprintue.com/render/lulp-fjg/" scrolling="no" allowfullscreen class="col-12" zoom=-10 height="400px"></iframe>
+                            </div> 
+                          </div>
+                          <!---------------------END OF BLUEPIRNT EXAMPLE--------------------->
+
+                          <!-----------------------------BLUEPRINT EXAMPLE--------------------------->
+                          <h5 class="mt-3">Play Collision Sound: RPC Example</h5>
+                          <p>This part of the show host blueprint is an example of an RPC that plays a cue for all clients. This cue is played when a player gets rammed by another player and 
+                            loses more than 3 items. The idea for having this cue play for every client is to keep the game show vibe with the game being commented on by the host.</p>
+                          
+                            <div>
+                            <div class="row text-center">
+                              <iframe src="https://blueprintue.com/render/za9z0rov/" scrolling="no" allowfullscreen class="col-12" zoom=-10 height="400px"></iframe>
+                            </div> 
+                          </div>
+                          <!-------------------------END OF BLUEPRINT EXAMPLE------------------------------>
+
+                          <!------------------------------------END OF SHOW HOST--------------------------------->
+
+                          <!-------------------------PLAYER CUES------------------------------>
+                          <h3 class="my-4">Power-up Cues</h3>
+                          <p>
+                            The power-up sound cues are a great example of audio implemented in blueprints through C++ callbacks. For these events, I implemented an actor component exclusively for player cues.
+                            This actor component was assigned to begin playing all the functions that played the sound cues for power-ups. This blueprint also took care of implementing the correct logic
+                            both for network and FMOD in order to ensure that each cue sounded only for the relevant player and to ensure that the FMOD logic that our sound designers intended was achieved. 
+                          </p>
+                          <!-------------------------BLUEPRINT EXAMPLE--------------------------->
+                          <div>
+                            <div class="row text-center">
+                              <iframe src="https://blueprintue.com/render/px9f4wfd/" scrolling="no" allowfullscreen class="col-12" zoom=-10 height="400px"></iframe>
+                            </div> 
+                          </div>
+                          <!-------------------------END OF BLUEPRINT EXAMPLE----------------->
+
+                          <!--------------------------CODE SAMPLE------------------------->
+                          <div class="code-sample row">
+                            <h5>Audio Callbacks in Power-up Component</h5>
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-cpp">
+//Callbacks for activating audio cues
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPlaySuperspeedCue);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPlayShieldCue);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPlayInfiniteInventoryCue);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPlayGooeyCue);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPlaySlipperyCue);
+
+//Callbacks for deactivating audio cues
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnStopSuperspeedCue);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnStopShieldCue);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnStopInfiniteInventoryCue); 
+
+//Callbacks for playing audio cues
+UPROPERTY(BlueprintAssignable)
+FOnPlaySuperspeedCue OnPlaySpeedCue;
+
+UPROPERTY(BlueprintAssignable)
+FOnPlayShieldCue OnPlayShieldCue;
+
+UPROPERTY(BlueprintAssignable)
+FOnPlayInfiniteInventoryCue OnPlayInfiniteCue;
+
+UPROPERTY(BlueprintAssignable)
+FOnPlayGooeyCue OnPlayGooeyCue;
+
+UPROPERTY(BlueprintAssignable)
+FOnPlaySlipperyCue OnPlaySlipperyCue;
+
+//Callbacks for stopping audio cues
+UPROPERTY(BlueprintAssignable)
+FOnStopShieldCue OnStopShieldCue;
+
+UPROPERTY(BlueprintAssignable)
+FOnStopSuperspeedCue OnStopSpeedCue;
+
+UPROPERTY(BlueprintAssignable)
+FOnStopInfiniteInventoryCue OnStopInfiniteCue;
+
+//Callback for collecting powerup
+UPROPERTY(BlueprintAssignable)
+FOnPlayCollectPowerupSoundCue OnCollectSoundCue;
+                            </code></pre>
+                          </div>
+                          <!------------END OF CODE SAMPLE------------->
+
+                          <!--------------------------CODE SAMPLE------------------------->
+                          <div class="code-sample row">
+                            <h5>Power-up implementation with audio callbacks</h5>
+                            <div class="col-1"></div>
+                            <pre class="pre-scrollable col-10"><code class=" language-cpp">
+void UEMGPowerup::Server_UsePowerup_Implementation()
+{
+  
+  switch (CurrentPowerup)
+  {
+    
+  case EPowerUpType::SpeedBoost:
+    {
+      Server_SpeedPowerup();
+      GetWorld()->GetTimerManager().SetTimer(PowerupTimerHandle,this, &UEMGPowerup::Server_RevertPowerup,SpeedPowerupDuration,false);
+      OnPlaySpeedCue.Broadcast();
+      break;
+    }
+      
+  case EPowerUpType::InfiniteInventory:
+    {
+      InfiniteInventory();
+      //CurrentPowerupDuration = InventoryPowerupDuration;
+      GetWorld()->GetTimerManager().SetTimer(PowerupTimerHandle,this, &UEMGPowerup::Server_RevertPowerup,InventoryPowerupDuration,false);
+      OnPlayInfiniteCue.Broadcast();
+      break;
+    }
+
+  case EPowerUpType::Shield:
+    {
+      Server_UseShieldPowerup();
+      GetWorld()->GetTimerManager().SetTimer(PowerupTimerHandle,this, &UEMGPowerup::Server_RevertPowerup,ShieldPowerupDuration,false);
+      OnPlayShieldCue.Broadcast();
+      break;
+    }
+
+
+  case EPowerUpType::Gooey:
+    {
+      if(!GooeyHazardRef)
+      {
+        return;
+      }
+      if(!PowerupSpawn)
+      {
+        return;
+      }
+      
+      FVector spawningLocation = PowerupSpawn->GetComponentLocation();
+      AEMG_ObstacleHazard* GooeyHazard = GetWorld()->SpawnActor<AEMG_ObstacleHazard>(GooeyHazardRef,spawningLocation,
+        GetOwner()->GetActorRotation(),PowerupSpawnParams);
+
+      OnPlayGooeyCue.Broadcast();
+      Server_RevertPowerup();
+      break;
+    }
+
+  case EPowerUpType::Slippery:
+    {
+      if(!SlipperyHazardRef)
+      {
+        return;
+      }
+      if(!PowerupSpawn)
+      {
+        return;
+      }
+      
+      FVector spawningLocation = PowerupSpawn->GetComponentLocation();
+      AEMG_SlipperyHazzard* slipperyHazard = GetWorld()->SpawnActor<AEMG_SlipperyHazzard>(SlipperyHazardRef,spawningLocation,
+        GetOwner()->GetActorRotation(),PowerupSpawnParams);
+
+      OnPlaySlipperyCue.Broadcast();
+      Server_RevertPowerup();
+      break;
+    }
+    
+  }
+}
+
+
+void UEMGPowerup::Server_RevertPowerup_Implementation()
+{
+  Multicast_RevertPowerup();
+}
+
+void UEMGPowerup::Multicast_RevertPowerup_Implementation()
+{
+  
+  switch (CurrentPowerup)
+  {
+    case EPowerUpType::SpeedBoost:
+      RevertSpeedPowerup();
+      OnStopSpeedCue.Broadcast();
+      break;
+    
+    case EPowerUpType::InfiniteInventory:
+      RevertInfiniteInventory();
+      OnStopInfiniteCue.Broadcast();
+      break;
+
+    case EPowerUpType::Shield:
+      OnStopShieldCue.Broadcast();
+      break;
+    
+  }
+  
+  CurrentPowerup = EPowerUpType::None;
+  PlayerRef->ResetPowewrupWidget();
+  CurrentPowerupDuration = 0;
+}
+
+EPowerUpType UEMGPowerup::GetRandomPowerup()
+{
+
+  //return EPowerUpType::Shield;
+  //Get score average in match
+  float avgScore = GetPlayerScoreAverage();
+
+  //tiers probability of powerup per tier (t1 is OP, tier3 is lame)
+  float tier1 = 0.25;
+  float tier2 = 0.35;
+  float tier3 = 0.40;
+
+  if(!PlayerRef)
+  {
+    return EPowerUpType::None;
+  }
+  
+  if(PlayerRef->GetPlayerState()->GetScore() < avgScore * 0.5)
+  {
+    tier1 += 0.35;
+    tier2 -= 0.10;
+    tier3 -= 0.25;
+  }
+
+  if(PlayerRef->GetPlayerState()->GetScore() > avgScore * 0.5)
+  {
+    tier1 -= 0.1;
+    tier2 -= 0.1;
+    tier3 += 0.2;
+  }
+
+  float RandomTierValue = FMath::FRand();
+
+  if(RandomTierValue < tier1)
+  {
+    //assign powerup between InfiniteInventory and Shield	
+    int32 RandomValue = FMath::RandRange(static_cast<int32>(EPowerUpType::InfiniteInventory),static_cast<int32>(EPowerUpType::Shield));
+    return static_cast<EPowerUpType>(RandomValue);
+  }
+
+  if(RandomTierValue < tier1 + tier2)
+  {
+    //assign SpeedBoost
+    return EPowerUpType::SpeedBoost;
+  }
+
+  else
+  {
+    //assign between Slippery and Gooey
+    int32 RandomValue = FMath::RandRange(static_cast<int32>(EPowerUpType::Slippery),static_cast<int32>(EPowerUpType::Gooey));
+    return static_cast<EPowerUpType>(RandomValue);
+  }
+  
+}   
+                            </code></pre>
+                          </div>
+                          <!------------END OF CODE SAMPLE------------->
+                      </div>
+                      <!----------------------END OF BODY------------------------------------------------------------------------->
+                    </div>
+                  </div>
+                </div>
+                <!--------------------END OF AUDIO IMPLEMENTATION------------------------------------->
+
+          </div>
+
+          <!---------------------LINK TO REPO-------------------------->
+          <div class="row my-5 text-center">
+            <h2 class="display-5 text-dark p-5">Visit repo for full code</h2>
+            <div class="col-4"></div>
+            <div class="col-lg-4 ">
+              <div class="github-card" data-github="pedroeperezn/EMGPortfolioCode" data-width="400" data-height="" data-theme="default"></div>
+            </div>
+          </div>
+          <!--END OF LINK TO REPO-->
+
+
+        </div>
+      </div>
+    </section>
+
+<!----------------------------------------------------------------END OF DEVELOPMENT----------------------------------------------------------------------------->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
+            <div class="credits">
+              <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
+            -->
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Script to apply code formatting -->
+  <script src="./prism/prism.js"></script>
+
+</body>
+
+</html>
